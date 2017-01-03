@@ -1,6 +1,6 @@
 {
   "name": "grunt-replaceholder",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Used for replacing placeholder content with template tags.",
   "repository": "git@github.com:artparks/replaceholder.git",
   "author": {
