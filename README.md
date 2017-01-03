@@ -17,8 +17,6 @@ Take this sample markup that could be a file `topics.html`:
 
 So you would work on the above dummy markup to build your template and then run this Grunt plugin over your template files to replace any elements with a `data-replaceholder` attribute with the corresponding template tag that should actually be there.
 
-At some point I'll build a Yo generator that will help scaffold an entire Zendesk theme dev environment as it'd be pretty useful and I've done a lot of the legwork towards it.
-
 ## Getting Started
 This plugin requires Grunt.
 
