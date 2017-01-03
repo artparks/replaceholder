@@ -33,6 +33,10 @@ And then in templates.json:
         "foobar": "<ul>{{#each posts}}<li>{{post.name}}: {{post.author}}</li>{{/each}}</ul>"
     }
 
+
+### Tests
+There are no tests. This is all very simple and should be fine. Or, at least, is fine for my use-case. If you wish to expand this and make it more resilient, feel free!
+
 ## Getting Started
 This plugin requires Grunt.
 
