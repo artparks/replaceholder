@@ -17,6 +17,22 @@ Take this sample markup that could be a file `topics.html`:
 
 So you would work on the above dummy markup to build your template and then run this Grunt plugin over your template files to replace any elements with a `data-replaceholder` attribute with the corresponding template tag that should actually be there.
 
+### Using a templates file
+If you wish to replace with something more simple than just a {{handlebars}} style template tag (for example something that iterates over an array and then outputs each item), then you can put this template code into a separate file, to stop the `data-replaceholder=""` becoming unworkably huge.
+
+Specify the location of the template JSON file with the grunt option `templates`. This JSON file is then an object keyed by the template names you refer to in `data-replaceholder`. For example:
+
+    <ul data-replaceholder="template:foobar">
+        <li>Iteration one</li>
+        <li>Iteration two</li>
+    </ul>
+
+And then in templates.json:
+
+    {
+        "foobar": "<ul>{{#each posts}}<li>{{post.name}}: {{post.author}}</li>{{/each}}</ul>"
+    }
+
 ## Getting Started
 This plugin requires Grunt.
 
@@ -36,7 +52,8 @@ In your project's Gruntfile, add a section named `replaceholder` to the data obj
     grunt.initConfig({
       replaceholder: {
         options: {
-          dataAttribute: 'replaceholder'
+          dataAttribute: 'replaceholder',
+          templates: false // or a string with a path to a templates JSON file
         },
         target: {
           files: 'path/to/destination' : 'path/to/source/**/*.html'
